@@ -43,7 +43,7 @@ export const CreateAccount=()=>{
         if(ok){
             //redirect to login page;
             alert("Account Created! ,You can Log in now!");
-            history.push("/login");
+            history.push("/");
         }
     }
     const[createAccountMutation,{loading,data:CreateAccountMutationResult},]=useMutation<createAccountMutation,createAccountMutationVariables>(CREATE_ACCOUNT_MUTATION
@@ -106,7 +106,7 @@ export const CreateAccount=()=>{
             {CreateAccountMutationResult?.createAccount.error &&<FormError errorMessage={CreateAccountMutationResult?.createAccount.error}/>}
             </form>
             <div className="text-lg text-black py-3">
-                Already have an account,<Link to="/login">Login now</Link>
+                Already have an account,<Link to="/">Login now</Link>
             </div>
         </div>
     </div>
